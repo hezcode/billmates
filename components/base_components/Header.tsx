@@ -1,44 +1,32 @@
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { BottomTabHeaderProps } from "@react-navigation/bottom-tabs";
+import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
-import { Image, StyleSheet, useColorScheme, View } from "react-native";
+import { StyleSheet, useColorScheme } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ThemedText } from "../themed-text";
+import GoBackBtn from "../UI/GoBackBtn";
 
-const Header: React.FC<BottomTabHeaderProps> = () => {
+const Header = () => {
   const theme = useColorScheme();
   const insets = useSafeAreaInsets();
   return (
-    <View
+    <LinearGradient
+      colors={["rgb(2, 6, 23, 0.2)", "rgba(44, 45, 51, 0.6)"]}
       style={{
         flexDirection: "row",
-        justifyContent: "space-between",
         alignItems: "center",
-        paddingTop: insets.top + 12,
+        paddingTop: insets.top + 24,
         paddingHorizontal: 16,
-        paddingBottom: 12,
+        paddingBottom: 24,
+
+        borderBottomRightRadius: 32,
+        borderBottomLeftRadius: 32,
       }}
     >
-      <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-        <Image
-          source={require("@/assets/images/user_profile.png")}
-          style={{ width: 56, height: 56 }}
-        />
-        <ThemedText
-          style={{
-            fontFamily: "InterSemiBold",
-            fontSize: 18,
-          }}
-        >
-          Good Afternoon, Olga
-        </ThemedText>
-      </View>
-      <MaterialIcons
-        name="notifications-none"
-        size={28}
-        color={theme === "light" ? "#030717" : "#fff"}
-      />
-    </View>
+      <GoBackBtn />
+      <ThemedText style={{ textAlign: "center", width: "80%" }}>
+        All Splits
+      </ThemedText>
+    </LinearGradient>
   );
 };
 

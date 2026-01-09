@@ -1,12 +1,17 @@
+import { SplitDetails } from "@/types/split-details.type";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import React from "react";
 import { StyleSheet, useColorScheme, View } from "react-native";
 import { ThemedText } from "../themed-text";
 import { ThemedView } from "../themed-view";
 
-const SplitCard = () => {
+const SplitCard: React.FC<SplitDetails> = ({
+  title,
+  billAmount,
+  billStatus,
+  dateCreated,
+}) => {
   const theme = useColorScheme();
-  const fullSettled = false;
   return (
     <ThemedView
       lightColor="#ffffff"
@@ -25,23 +30,37 @@ const SplitCard = () => {
       }}
     >
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <ThemedText>Hangout to Mac Donalds</ThemedText>
+        <ThemedText style={styles.billTitle}>{title}</ThemedText>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-          <ThemedText>$45.00</ThemedText>
+          <ThemedText style={styles.billAmount}>${billAmount}</ThemedText>
           <MaterialIcons
             name="more-vert"
             size={24}
+            style={
+              {
+                //   borderWidth: 1,
+              }
+            }
             color={theme === "light" ? "#030717" : "#ffffff"}
           />
         </View>
       </View>
       <View></View>
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <ThemedText>
+        <ThemedText style={styles.billStatusContainer}>
           Bill status:{" "}
-          {`${fullSettled ? "Fully settled" : "Not fully settled"}`}
+          <ThemedText
+            style={[
+              styles.billStatus,
+              { color: billStatus === true ? "#23aa04" : "#ff0000" },
+            ]}
+          >{`${
+            billStatus === true ? "Fully settled" : "Not fully settled"
+          }`}</ThemedText>
         </ThemedText>
-        <ThemedText>$15.00</ThemedText>
+        <ThemedText style={[styles.date, { paddingRight: 8 }]}>
+          {dateCreated}
+        </ThemedText>
       </View>
     </ThemedView>
   );
@@ -49,4 +68,24 @@ const SplitCard = () => {
 
 export default SplitCard;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  billTitle: {
+    fontFamily: "PoppinsSemiBold",
+  },
+  billAmount: {
+    fontFamily: "GeistSemiBold",
+    color: "#f97216",
+  },
+  date: {
+    fontSize: 12,
+    fontFamily: "InterMedium",
+  },
+  billStatusContainer: {
+    fontSize: 14,
+    fontFamily: "InterRegular",
+  },
+  billStatus: {
+    fontSize: 14,
+    fontFamily: "InterMedium",
+  },
+});

@@ -4,6 +4,7 @@ import React from "react";
 import { HapticTab } from "@/components/haptic-tab";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 
+import Header from "@/components/base_components/Header";
 import TabBar from "@/components/base_components/TabBar";
 
 export default function TabLayout() {
@@ -27,6 +28,8 @@ export default function TabLayout() {
         name="splits"
         options={{
           title: "Splits",
+          headerShown: true,
+          header: () => <Header />,
         }}
       />
       <Tabs.Screen

@@ -1,0 +1,74 @@
+{
+  "splits": [
+    {
+      "id": "1",
+      "title": "Hangout to Mc. Donalds",
+      "billAmount": "20.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    },
+    {
+      "id": "2",
+      "title": "Hangout to KFC",
+      "billAmount": "19.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    },
+    {
+      "id": "3",
+      "title": "Toiletries",
+      "billAmount": "18.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    },
+    {
+      "id": "4",
+      "title": "Coffee with Jones",
+      "billAmount": "40.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    },
+    {
+      "id": "5",
+      "title": "Lunch in Office",
+      "billAmount": "95.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    },
+    {
+      "id": "6",
+      "title": "Toiletries",
+      "billAmount": "40.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    },
+    {
+      "id": "7",
+      "title": "Hangout to Mc. Donalds",
+      "billAmount": "90.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    },
+    {
+      "id": "8",
+      "title": "Hangout with Timi",
+      "billAmount": "120.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    },
+    {
+      "id": "9",
+      "title": "Electricity Bills",
+      "billAmount": "400.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    },
+    {
+      "id": "10",
+      "title": "Rent with Joao",
+      "billAmount": "1000.00",
+      "billStatus": false,
+      "dateCreated": "01/01/2026"
+    }
+  ]
+}

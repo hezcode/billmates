@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, useColorScheme, View } from "react-native";
+import splitData from "../../constants/splits.json";
 import SplitCard from "../block_components/SplitCard";
 import { ThemedText } from "../themed-text";
 
@@ -26,8 +27,17 @@ const RecentSplits = () => {
         </ThemedText>
       </View>
       <View style={{ gap: 16 }}>
-        <SplitCard />
-        <SplitCard />
+        {splitData.splits.map((data) => {
+          return (
+            <SplitCard
+              key={data.id}
+              title={data.title}
+              billAmount={data.billAmount}
+              billStatus={data.billStatus}
+              dateCreated={data.dateCreated}
+            />
+          );
+        })}
       </View>
     </View>
   );
