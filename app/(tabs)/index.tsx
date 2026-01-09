@@ -1,98 +1,155 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import FriendsListComponents from "@/components/base_components/FriendsListComponents";
+import RecentSplits from "@/components/base_components/RecentSplits";
+import { ThemedText } from "@/components/themed-text";
+import { ThemedView } from "@/components/themed-view";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { LinearGradient } from "expo-linear-gradient";
+import React from "react";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from "react-native";
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
-
-export default function HomeScreen() {
+const HomeScreen = () => {
+  const theme = useColorScheme();
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
+    <ScrollView>
+      <ThemedView style={styles.container}>
+        <LinearGradient
+          colors={["rgb(2, 6, 23, 0.2)", "rgba(44, 45, 51, 0.6)"]}
+          style={styles.dashboardContainer}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <View
+              style={{ flexDirection: "row", alignItems: "center", gap: 12 }}
+            >
+              <Image
+                source={require("@/assets/images/user_profile.png")}
+                style={{ width: 56, height: 56 }}
               />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
-
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
+              <ThemedText
+                style={{
+                  fontFamily: "InterSemiBold",
+                  fontSize: 18,
+                }}
+              >
+                Good Afternoon, Olga
+              </ThemedText>
+            </View>
+            <MaterialIcons
+              name="notifications-none"
+              size={28}
+              color={theme === "light" ? "#030717" : "#fff"}
+            />
+          </View>
+          <View style={{ marginTop: 18, gap: 8 }}>
+            <View
+              style={{ flexDirection: "row", alignItems: "center", gap: 8 }}
+            >
+              <ThemedText
+                lightColor="#000000bf"
+                darkColor="#ffffffbc"
+                style={{ fontSize: 14, lineHeight: 20 }}
+              >
+                Rank
+              </ThemedText>
+              <Text>🎖️</Text>
+            </View>
+            <ThemedText
+              lightColor="#000000e3"
+              darkColor="#fff"
+              style={{
+                fontSize: 18,
+                fontWeight: "700",
+                lineHeight: 20,
+                fontFamily: "InterBold",
+              }}
+            >
+              Billmate Rookie
+            </ThemedText>
+          </View>
+          <View
+            style={{
+              marginTop: 24,
+              width: "100%",
+              height: 180,
+              backgroundColor: "rgb(255, 255, 255, 0.5)",
+              borderRadius: 32,
+              padding: 16,
+              borderWidth: 1,
+              borderColor: "rgba(0, 0, 0, 0.3)",
+              boxShadow:
+                theme === "light"
+                  ? "0px 2px 6px rgba(0, 0, 0, 0.15)"
+                  : "0px 2px 6px rgba(255, 255, 255, 0.15)",
+              justifyContent: "space-between",
+            }}
+          >
+            <View>
+              <ThemedText lightColor="#000000e3" darkColor="rgba(0, 0,0, 0.7)">
+                Total Amount Splitted
+              </ThemedText>
+              <ThemedText type="bigNumbers" style={{ color: "#f97216" }}>
+                $825.00
+              </ThemedText>
+            </View>
+            <View
+              style={{ justifyContent: "space-between", flexDirection: "row" }}
+            >
+              <View>
+                <ThemedText
+                  lightColor="#000000e3"
+                  darkColor="rgba(0, 0,0, 0.7)"
+                >
+                  Expense
+                </ThemedText>
+                <ThemedText type="bigNumbers" style={{ color: "#020617" }}>
+                  $300.00
+                </ThemedText>
+              </View>
+              <View>
+                <ThemedText
+                  lightColor="#000000e3"
+                  darkColor="rgba(0, 0,0, 0.7)"
+                >
+                  Unsettled Bill
+                </ThemedText>
+                <ThemedText type="bigNumbers" style={{ color: "#020617" }}>
+                  $500.00
+                </ThemedText>
+              </View>
+            </View>
+          </View>
+        </LinearGradient>
+        <FriendsListComponents />
+        <RecentSplits />
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    </ScrollView>
   );
-}
+};
+
+export default HomeScreen;
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    flex: 1,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  dashboardContainer: {
+    width: "100%",
+    height: 420,
+    borderBottomEndRadius: 32,
+    borderBottomStartRadius: 32,
+    paddingTop: 60,
+    paddingHorizontal: 16,
   },
 });

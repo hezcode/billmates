@@ -1,0 +1,29 @@
+{
+  "friends": [
+    {
+      "id": "1",
+      "name": "Alice Johnson",
+      "avatar": "friend_01"
+    },
+    {
+      "id": "2",
+      "name": "Bob Smith",
+      "avatar": "friend_02"
+    },
+    {
+      "id": "3",
+      "name": "Charlie Davis",
+      "avatar": "friend_03"
+    },
+    {
+      "id": "4",
+      "name": "Diana Evans",
+      "avatar": "friend_04"
+    },
+    {
+      "id": "5",
+      "name": "Ethan Brown",
+      "avatar": "friend_05"
+    }
+  ]
+}
