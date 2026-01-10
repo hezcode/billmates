@@ -1,4 +1,5 @@
 import SplitCard from "@/components/block_components/SplitCard";
+import { ThemedView } from "@/components/themed-view";
 import splitData from "@/constants/splits.json";
 import { FlashList } from "@shopify/flash-list";
 import React from "react";
@@ -9,7 +10,7 @@ const SplitScreen = () => {
   const splits = splitData.splits;
   const inset = useSafeAreaInsets();
   return (
-    <View style={styles.pageContainer}>
+    <ThemedView style={styles.pageContainer}>
       <FlashList
         showsVerticalScrollIndicator={false}
         data={splits}
@@ -19,6 +20,7 @@ const SplitScreen = () => {
             billStatus={item.billStatus}
             title={item.title}
             dateCreated={item.dateCreated}
+            participants={item.participants}
           />
         )}
         keyExtractor={(item) => item.id}
@@ -28,7 +30,7 @@ const SplitScreen = () => {
           paddingBottom: inset.bottom + 90,
         }}
       />
-    </View>
+    </ThemedView>
   );
 };
 

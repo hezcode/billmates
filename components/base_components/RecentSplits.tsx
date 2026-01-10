@@ -1,33 +1,43 @@
+import { useRouter } from "expo-router";
 import React from "react";
-import { StyleSheet, useColorScheme, View } from "react-native";
+import {
+  StyleSheet,
+  TouchableOpacity,
+  useColorScheme,
+  View,
+} from "react-native";
 import splitData from "../../constants/splits.json";
 import SplitCard from "../block_components/SplitCard";
 import { ThemedText } from "../themed-text";
 
 const RecentSplits = () => {
   const theme = useColorScheme();
+  const splitsToShow = splitData.splits.slice(0, 4);
+  const { push } = useRouter();
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
         <ThemedText style={{ fontSize: 20, fontWeight: 500 }}>
           Recent Split
         </ThemedText>
-        <ThemedText
-          style={[
-            styles.seeAllText,
-            {
-              color:
-                theme === "light"
-                  ? "rgb(2, 6, 23, 0.5)"
-                  : "rgb(255, 255, 255, 0.5)",
-            },
-          ]}
-        >
-          see all
-        </ThemedText>
+        <TouchableOpacity onPress={() => push("/splits")}>
+          <ThemedText
+            style={[
+              styles.seeAllText,
+              {
+                color:
+                  theme === "light"
+                    ? "rgb(2, 6, 23, 0.5)"
+                    : "rgb(255, 255, 255, 0.5)",
+              },
+            ]}
+          >
+            see all
+          </ThemedText>
+        </TouchableOpacity>
       </View>
       <View style={{ gap: 16 }}>
-        {splitData.splits.map((data) => {
+        {splitsToShow.map((data) => {
           return (
             <SplitCard
               key={data.id}
@@ -35,6 +45,7 @@ const RecentSplits = () => {
               billAmount={data.billAmount}
               billStatus={data.billStatus}
               dateCreated={data.dateCreated}
+              participants={data.participants}
             />
           );
         })}
@@ -60,5 +71,6 @@ const styles = StyleSheet.create({
   },
   seeAllText: {
     fontSize: 14,
+    fontFamily: "InterMedium",
   },
 });

@@ -5,70 +5,412 @@
       "title": "Hangout to Mc. Donalds",
       "billAmount": "20.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$5.00"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$5.00"
+        },
+        {
+          "id": "1.3",
+          "name": "Charlie Davis",
+          "avatar": "friend_03",
+          "paid": true,
+          "billedAmount": "$5.00"
+        },
+        {
+          "id": "1.4",
+          "name": "Diana Evans",
+          "avatar": "friend_04",
+          "paid": true,
+          "billedAmount": "$5.00"
+        }
+      ]
     },
     {
       "id": "2",
       "title": "Hangout to KFC",
       "billAmount": "19.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$9.50"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$9.50"
+        }
+      ]
     },
     {
       "id": "3",
       "title": "Toiletries",
       "billAmount": "18.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$1.30"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$1.30"
+        },
+        {
+          "id": "1.3",
+          "name": "Charlie Davis",
+          "avatar": "friend_03",
+          "paid": true,
+          "billedAmount": "$1.30"
+        },
+        {
+          "id": "1.4",
+          "name": "Diana Evans",
+          "avatar": "friend_04",
+          "paid": true,
+          "billedAmount": "$1.30"
+        },
+        {
+          "id": "1.5",
+          "name": "Ethan Brown",
+          "avatar": "friend_05",
+          "paid": true,
+          "billedAmount": "$1.30"
+        }
+      ]
     },
     {
       "id": "4",
       "title": "Coffee with Jones",
       "billAmount": "40.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$8.00"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$8.00"
+        },
+        {
+          "id": "1.3",
+          "name": "Charlie Davis",
+          "avatar": "friend_03",
+          "paid": true,
+          "billedAmount": "$8.00"
+        },
+        {
+          "id": "1.4",
+          "name": "Diana Evans",
+          "avatar": "friend_04",
+          "paid": true,
+          "billedAmount": "$8.00"
+        },
+        {
+          "id": "1.5",
+          "name": "Ethan Brown",
+          "avatar": "friend_05",
+          "paid": true,
+          "billedAmount": "$5.00"
+        }
+      ]
     },
     {
       "id": "5",
       "title": "Lunch in Office",
       "billAmount": "95.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$19.00"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$19.00"
+        },
+        {
+          "id": "1.3",
+          "name": "Charlie Davis",
+          "avatar": "friend_03",
+          "paid": true,
+          "billedAmount": "$19.00"
+        },
+        {
+          "id": "1.4",
+          "name": "Diana Evans",
+          "avatar": "friend_04",
+          "paid": true,
+          "billedAmount": "$19.00"
+        },
+        {
+          "id": "1.5",
+          "name": "Ethan Brown",
+          "avatar": "friend_05",
+          "paid": true,
+          "billedAmount": "$19.00"
+        }
+      ]
     },
     {
       "id": "6",
       "title": "Toiletries",
       "billAmount": "40.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$8.00"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$8.00"
+        },
+        {
+          "id": "1.3",
+          "name": "Charlie Davis",
+          "avatar": "friend_03",
+          "paid": true,
+          "billedAmount": "$8.00"
+        },
+        {
+          "id": "1.4",
+          "name": "Diana Evans",
+          "avatar": "friend_04",
+          "paid": true,
+          "billedAmount": "$8.00"
+        },
+        {
+          "id": "1.5",
+          "name": "Ethan Brown",
+          "avatar": "friend_05",
+          "paid": true,
+          "billedAmount": "$8.00"
+        }
+      ]
     },
     {
       "id": "7",
       "title": "Hangout to Mc. Donalds",
       "billAmount": "90.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$18.00"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$18.00"
+        },
+        {
+          "id": "1.3",
+          "name": "Charlie Davis",
+          "avatar": "friend_03",
+          "paid": true,
+          "billedAmount": "$18.00"
+        },
+        {
+          "id": "1.4",
+          "name": "Diana Evans",
+          "avatar": "friend_04",
+          "paid": true,
+          "billedAmount": "$18.00"
+        },
+        {
+          "id": "1.5",
+          "name": "Ethan Brown",
+          "avatar": "friend_05",
+          "paid": true,
+          "billedAmount": "$18.00"
+        }
+      ]
     },
     {
       "id": "8",
       "title": "Hangout with Timi",
       "billAmount": "120.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$25.00"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$25.00"
+        },
+        {
+          "id": "1.3",
+          "name": "Charlie Davis",
+          "avatar": "friend_03",
+          "paid": true,
+          "billedAmount": "$25.00"
+        },
+        {
+          "id": "1.4",
+          "name": "Diana Evans",
+          "avatar": "friend_04",
+          "paid": true,
+          "billedAmount": "$25.00"
+        },
+        {
+          "id": "1.5",
+          "name": "Ethan Brown",
+          "avatar": "friend_05",
+          "paid": true,
+          "billedAmount": "$25.00"
+        }
+      ]
     },
     {
       "id": "9",
       "title": "Electricity Bills",
       "billAmount": "400.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$80.00"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$80.00"
+        },
+        {
+          "id": "1.3",
+          "name": "Charlie Davis",
+          "avatar": "friend_03",
+          "paid": true,
+          "billedAmount": "$80.00"
+        },
+        {
+          "id": "1.4",
+          "name": "Diana Evans",
+          "avatar": "friend_04",
+          "paid": true,
+          "billedAmount": "$80.00"
+        },
+        {
+          "id": "1.5",
+          "name": "Ethan Brown",
+          "avatar": "friend_05",
+          "paid": true,
+          "billedAmount": "$80.00"
+        }
+      ]
     },
     {
       "id": "10",
       "title": "Rent with Joao",
       "billAmount": "1000.00",
       "billStatus": false,
-      "dateCreated": "01/01/2026"
+      "dateCreated": "01/01/2026",
+      "participants": [
+        {
+          "id": "1.1",
+          "name": "Alice Johnson",
+          "avatar": "friend_01",
+          "paid": true,
+          "billedAmount": "$200.00"
+        },
+        {
+          "id": "1.2",
+          "name": "Bob Smith",
+          "avatar": "friend_02",
+          "paid": true,
+          "billedAmount": "$200.00"
+        },
+        {
+          "id": "1.3",
+          "name": "Charlie Davis",
+          "avatar": "friend_03",
+          "paid": true,
+          "billedAmount": "$200.00"
+        },
+        {
+          "id": "1.4",
+          "name": "Diana Evans",
+          "avatar": "friend_04",
+          "paid": true,
+          "billedAmount": "$200.00"
+        },
+        {
+          "id": "1.5",
+          "name": "Ethan Brown",
+          "avatar": "friend_05",
+          "paid": true,
+          "billedAmount": "$200.00"
+        }
+      ]
     }
   ]
 }

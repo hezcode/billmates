@@ -29,13 +29,15 @@ export default function TabLayout() {
         options={{
           title: "Splits",
           headerShown: true,
-          header: () => <Header />,
+          header: () => <Header title="All Splits" />,
         }}
       />
       <Tabs.Screen
         name="friends"
         options={{
           title: "Friends",
+          headerShown: true,
+          header: () => <Header title="All Friends" />,
         }}
       />
     </Tabs>

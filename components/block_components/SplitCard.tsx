@@ -1,7 +1,8 @@
+import { jsonImageIterator } from "@/helper/jsonImageIterator";
 import { SplitDetails } from "@/types/split-details.type";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import React from "react";
-import { StyleSheet, useColorScheme, View } from "react-native";
+import { Image, StyleSheet, useColorScheme, View } from "react-native";
 import { ThemedText } from "../themed-text";
 import { ThemedView } from "../themed-view";
 
@@ -10,8 +11,11 @@ const SplitCard: React.FC<SplitDetails> = ({
   billAmount,
   billStatus,
   dateCreated,
+  participants,
 }) => {
   const theme = useColorScheme();
+  const participantsToShow = participants.slice(0, 3);
+  const participantsLeft = participants.slice(3);
   return (
     <ThemedView
       lightColor="#ffffff"
@@ -36,16 +40,24 @@ const SplitCard: React.FC<SplitDetails> = ({
           <MaterialIcons
             name="more-vert"
             size={24}
-            style={
-              {
-                //   borderWidth: 1,
-              }
-            }
             color={theme === "light" ? "#030717" : "#ffffff"}
           />
         </View>
       </View>
-      <View></View>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
+        {participantsToShow.map((participant) => {
+          return (
+            <Image
+              key={participant.id}
+              source={jsonImageIterator(participant.avatar)}
+              style={{ width: 48, height: 48 }}
+            />
+          );
+        })}
+        <ThemedText style={{ fontFamily: "InterSemiBold", fontSize: 12 }}>
+          {participantsLeft.length > 0 ? `+${participantsLeft.length}` : null}
+        </ThemedText>
+      </View>
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
         <ThemedText style={styles.billStatusContainer}>
           Bill status:{" "}
