@@ -1,11 +1,6 @@
 import { useRouter } from "expo-router";
 import React from "react";
-import {
-  StyleSheet,
-  TouchableOpacity,
-  useColorScheme,
-  View,
-} from "react-native";
+import { Pressable, StyleSheet, useColorScheme, View } from "react-native";
 import splitData from "../../constants/splits.json";
 import SplitCard from "../block_components/SplitCard";
 import { ThemedText } from "../themed-text";
@@ -20,7 +15,7 @@ const RecentSplits = () => {
         <ThemedText style={{ fontSize: 20, fontWeight: 500 }}>
           Recent Split
         </ThemedText>
-        <TouchableOpacity onPress={() => push("/splits")}>
+        <Pressable onPress={() => push("/(protected)/(tabs)/splits")}>
           <ThemedText
             style={[
               styles.seeAllText,
@@ -34,13 +29,14 @@ const RecentSplits = () => {
           >
             see all
           </ThemedText>
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <View style={{ gap: 16 }}>
         {splitsToShow.map((data) => {
           return (
             <SplitCard
               key={data.id}
+              id={data.id}
               title={data.title}
               billAmount={data.billAmount}
               billStatus={data.billStatus}

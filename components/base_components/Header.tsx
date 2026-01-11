@@ -1,3 +1,5 @@
+import splitData from "@/constants/splits.json";
+import { useNavigationState } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { StyleSheet } from "react-native";
@@ -7,11 +9,16 @@ import { ThemedView } from "../themed-view";
 import GoBackBtn from "../UI/GoBackBtn";
 
 interface HeaderProps {
-  title: string;
+  title?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
   const insets = useSafeAreaInsets();
+
+  const route = useNavigationState((state) => state.routes[state.index]);
+  const params: Readonly<{ splitId?: string } | undefined> = route.params;
+  const split = splitData.splits.find((split) => split.id === params?.splitId);
+
   return (
     <ThemedView>
       <LinearGradient
@@ -22,7 +29,6 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
           paddingTop: insets.top + 24,
           paddingHorizontal: 16,
           paddingBottom: 24,
-
           borderBottomRightRadius: 32,
           borderBottomLeftRadius: 32,
         }}
@@ -35,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
             fontFamily: "InterSemiBold",
           }}
         >
-          {title}
+          {split?.title || title}
         </ThemedText>
       </LinearGradient>
     </ThemedView>

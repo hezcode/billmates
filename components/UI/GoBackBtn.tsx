@@ -1,11 +1,14 @@
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { useRouter } from "expo-router";
 import React from "react";
-import { StyleSheet, useColorScheme, View } from "react-native";
+import { Pressable, StyleSheet, useColorScheme } from "react-native";
 
 const GoBackBtn = () => {
   const theme = useColorScheme();
+  const { back } = useRouter();
   return (
-    <View
+    <Pressable
+      onPress={() => back()}
       style={[
         styles.container,
         { backgroundColor: theme === "light" ? "#fff" : "#030717" },
@@ -16,7 +19,7 @@ const GoBackBtn = () => {
         size={24}
         color={theme === "light" ? "#030717" : "#fff"}
       />
-    </View>
+    </Pressable>
   );
 };
 

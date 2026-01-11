@@ -6,6 +6,7 @@ export interface SplitParticipant {
   billedAmount: string;
 }
 export interface SplitDetails {
+  id: string;
   title: string;
   billStatus: boolean;
   billAmount: string;

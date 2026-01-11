@@ -16,6 +16,7 @@ const SplitScreen = () => {
         data={splits}
         renderItem={({ item }) => (
           <SplitCard
+            id={item.id}
             billAmount={item.billAmount}
             billStatus={item.billStatus}
             title={item.title}

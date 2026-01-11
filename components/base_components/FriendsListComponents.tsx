@@ -4,8 +4,8 @@ import React from "react";
 import {
   Image,
   ImageSourcePropType,
+  Pressable,
   StyleSheet,
-  TouchableOpacity,
   useColorScheme,
   View,
 } from "react-native";
@@ -13,7 +13,7 @@ import { ThemedText } from "../themed-text";
 
 const FriendsListComponents = () => {
   const theme = useColorScheme();
-  const { push } = useRouter();
+  const { navigate } = useRouter();
   const avatarMap: Record<string, ImageSourcePropType | undefined> = {
     friend_01: require("@/assets/images/friend_01.png"),
     friend_02: require("@/assets/images/friend_02.png"),
@@ -28,7 +28,7 @@ const FriendsListComponents = () => {
         <ThemedText style={{ fontSize: 20, fontWeight: 500 }}>
           Friends from contact
         </ThemedText>
-        <TouchableOpacity onPress={() => push("/friends")}>
+        <Pressable onPress={() => navigate("/(protected)/(tabs)/friends")}>
           <ThemedText
             style={[
               styles.seeAllText,
@@ -42,7 +42,7 @@ const FriendsListComponents = () => {
           >
             see all
           </ThemedText>
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
         {friendList.friends.map((friend) => (

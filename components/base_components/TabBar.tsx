@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     bottom: 32,
     left: 16,
     right: 16,
-    borderRadius: 16,
+    borderRadius: 32,
     paddingVertical: 16,
     paddingHorizontal: 16,
     boxShadow: "0px 4px 6px rgba(2, 5, 23, 0.2)",
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     gap: 8,
     paddingHorizontal: 16,
     paddingVertical: 8,
-    borderRadius: 8,
+    borderRadius: 32,
   },
   tabBarText: {
     fontFamily: "InterMedium",
