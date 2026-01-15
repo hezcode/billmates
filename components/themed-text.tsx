@@ -11,7 +11,8 @@ export type ThemedTextProps = TextProps & {
     | "defaultSemiBold"
     | "subtitle"
     | "link"
-    | "bigNumbers";
+    | "bigNumbers"
+    | "error";
 };
 
 export function ThemedText({
@@ -34,6 +35,7 @@ export function ThemedText({
         type === "link" ? styles.link : undefined,
         type === "bigNumbers" ? styles.bigNumbers : undefined,
         style,
+        type === "error" ? styles.error : undefined,
       ]}
       {...rest}
     />
@@ -70,5 +72,9 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontFamily: "GeistBold",
     lineHeight: 42,
+  },
+  error: {
+    fontSize: 14,
+    fontFamily: "InterMedium",
   },
 });

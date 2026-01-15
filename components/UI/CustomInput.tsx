@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Control,
   Controller,
@@ -28,6 +28,17 @@ const CustomInput = <T extends FieldValues>({
   required,
   error,
 }: CustomInputProps<T>) => {
+  const [isFocused, setIsFocused] = useState<boolean>(false);
+  const borderColor =
+    isFocused && !error
+      ? "#000"
+      : isFocused && error
+      ? "red"
+      : !isFocused && !error
+      ? "#c9c9c9"
+      : !isFocused && error
+      ? "red"
+      : undefined;
   return (
     <View style={{ gap: 8 }}>
       <ThemedText style={{ fontFamily: "InterMedium", fontSize: 18 }}>
@@ -42,7 +53,7 @@ const CustomInput = <T extends FieldValues>({
           <TextInput
             style={{
               borderWidth: 1,
-              borderColor: error ? "red" : "#c9c9c9",
+              borderColor: borderColor,
               fontSize: 16,
               fontFamily: "InterRegular",
               paddingHorizontal: 12,
@@ -54,11 +65,16 @@ const CustomInput = <T extends FieldValues>({
             value={value}
             onBlur={onBlur}
             onChangeText={onChange}
+            onFocus={() => setIsFocused}
           />
         )}
         name={name}
       />
-      {error?.message ? <ThemedText>{error?.message}</ThemedText> : null}
+      {error?.message ? (
+        <ThemedText type="error" lightColor="red">
+          {error?.message}
+        </ThemedText>
+      ) : null}
     </View>
   );
 };
