@@ -2,7 +2,7 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Pressable, StyleSheet, useColorScheme, View } from "react-native";
 import splitData from "../../constants/splits.json";
-import SplitCard from "../block_components/SplitCard";
+import SplitCard from "../UI/SplitCard";
 import { ThemedText } from "../themed-text";
 
 const RecentSplits = () => {

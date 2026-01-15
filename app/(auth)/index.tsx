@@ -1,4 +1,4 @@
-import CustomButton from "@/components/block_components/CustomButton";
+import CustomButton from "@/components/UI/CustomButton";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";

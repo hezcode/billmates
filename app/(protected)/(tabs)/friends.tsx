@@ -1,4 +1,4 @@
-import FriendCard from "@/components/block_components/FriendCard";
+import FriendCard from "@/components/UI/FriendCard";
 import { ThemedView } from "@/components/themed-view";
 import friendData from "@/constants/friends.json";
 import { FlashList } from "@shopify/flash-list";

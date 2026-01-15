@@ -1,4 +1,4 @@
-import SplitCard from "@/components/block_components/SplitCard";
+import SplitCard from "@/components/UI/SplitCard";
 import { ThemedView } from "@/components/themed-view";
 import splitData from "@/constants/splits.json";
 import { FlashList } from "@shopify/flash-list";

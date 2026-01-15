@@ -7,6 +7,7 @@ interface CustomButtonProps {
   icon?: React.ReactNode;
   solid?: boolean;
   onPressFunc?: () => void;
+  withoutIcon?: boolean;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
@@ -14,6 +15,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   icon,
   solid,
   onPressFunc,
+  withoutIcon,
 }) => {
   return (
     <Pressable
@@ -27,12 +29,17 @@ const CustomButton: React.FC<CustomButtonProps> = ({
         borderRadius: 32,
         borderColor: solid ? "#030717" : "#fff",
         backgroundColor: solid ? "#030717" : "transparent",
+        justifyContent: withoutIcon ? "center" : "flex-start",
       }}
       onPress={onPressFunc}
     >
       {icon}
       <ThemedText
-        style={{ fontFamily: "InterSemiBold", fontSize: 18, color: "#fff" }}
+        style={{
+          fontFamily: "InterSemiBold",
+          fontSize: 18,
+          color: "#fff",
+        }}
       >
         {text}
       </ThemedText>
